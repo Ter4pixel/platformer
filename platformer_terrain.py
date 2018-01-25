@@ -10,13 +10,13 @@ import platformer_main
 
 
 def return_terrain():
+    # make an empty array:
     terrain_array = []
 
     """ for loop for procedural terrain generation. """
     for random_platform in range(0, 10):
-        # Put random platforms in game - first two values is the width and height.
+        # Put random platforms in game - first two values is the width and height (I think?).
         elementtoconsider = [200, 5, random.randrange(0, platformer_main.SCREEN_WIDTH), random.randrange(0, platformer_main.SCREEN_HEIGHT)]
-        # Array with width, height, x, and y of platform
 
         addtoarray = True
         # makes sure the terrain doesn't collide with other terrain.
