@@ -18,7 +18,7 @@ for thing in range(0, 10):
   # makes sure the terrain doesn't collide with other terrain.
   for lengthindex in range(0, terrain_array.length):
     item = terrain_array[lengthindex]
-    if (item[2] < elementtoconsider[2] && item[2] + item[0] > elementtoconsider[2] + elementtoconsider[0] && item[3] < elementtoconsider[3] && item[3] + item[1] > elementtoconsider[3] + elementtoconsider[1]):
+    if (item[2] < elementtoconsider[2] and item[2] + item[0] > elementtoconsider[2] + elementtoconsider[0] and item[3] < elementtoconsider[3] && item[3] + item[1] > elementtoconsider[3] + elementtoconsider[1]):
       addtoarray = false
   if (addtoarray):
     terrain_array.append(elementtoconsider)
