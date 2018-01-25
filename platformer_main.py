@@ -1,7 +1,8 @@
-import pygame # very obvious why this is imported
-import pyglet # for procedural terrain generation
-import random # for random things
+import pygame  # very obvious why this is imported
 import platformer_terrain
+import pyglet  # for procedural terrain generation
+import random  # for random things
+
 
 # Global constants
 
@@ -86,7 +87,7 @@ class Player(pygame.sprite.Sprite):
         if self.change_y == 0:
             self.change_y = 1
         else:
-            #this changes how strong the gravity is / how fast you fall
+            # this changes how strong the gravity is / how fast you fall
             self.change_y += .25
 
         # See if we're on the ground.
@@ -180,18 +181,8 @@ class Level_01(Level):
         Level.__init__(self, player)
 
         # Array with width and height as first and second values and third and fourth values are the x, and y coordinates of platform
-        level = return_terrain()
-        
-        #""" for loop for procedural terrain generation. """
-        #for i in range(0, 10):
-            # Put random platforms in game
-            # level.append([random.randrange(100, 200), random.randrange(100, 200), random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
-            # first two values is the width and height.
-            #level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
-            #level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
-            #level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
-            #level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
-            
+        level = platformer_terrain.return_terrain()
+
         # Go through the array above and add platforms
         for platform in level:
             block = Platform(platform[0], platform[1])
@@ -216,7 +207,7 @@ def main():
 
     # Create all the levels
     level_list = []
-    level_list.append( Level_01(player) )
+    level_list.append(Level_01(player))
 
     # Set the current level
     current_level_no = 0
@@ -262,12 +253,12 @@ def main():
         current_level.update()
 
         # If the player gets near the right side of the game window, shift the world left (-x)
-        #if player.rect.right > SCREEN_WIDTH:
-            #player.rect.right = SCREEN_WIDTH
+        # if player.rect.right > SCREEN_WIDTH:
+        # player.rect.right = SCREEN_WIDTH
 
         # If the player gets near the left side of the game window, shift the world right (+x)
-        #if player.rect.left < 0:
-            #player.rect.left = 0
+        # if player.rect.left < 0:
+        # player.rect.left = 0
 
         # ALL CODE TO DRAW SHOULD GO BELOW THIS COMMENT
         current_level.draw(screen)
@@ -284,6 +275,7 @@ def main():
     # Be IDLE friendly. If you forget this line, the program will 'hang'
     # on exit.
     pygame.quit()
+
 
 if __name__ == "__main__":
     main()
