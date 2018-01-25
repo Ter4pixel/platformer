@@ -180,14 +180,17 @@ class Level_01(Level):
 
         # Array with width and height as first and second values and third and fourth values are the x, and y coordinates of platform
         level = [[210, 70, 25, 50 ]]
-
+        
+        """ for loop for procedural terrain generation. """
         for i in range(0, 10):
             # Put random platforms in game
             # level.append([random.randrange(100, 200), random.randrange(100, 200), random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
-            level.append([200, 5, random.randrange(0, SCREEN_WIDTH),
-                          random.randrange(0, SCREEN_HEIGHT)])
-
-
+            # first two values is the width and height.
+            level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
+            level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
+            level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
+            level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
+            
         # Go through the array above and add platforms
         for platform in level:
             block = Platform(platform[0], platform[1])
@@ -231,7 +234,7 @@ def main():
     # Used to manage how fast the screen updates
     clock = pygame.time.Clock()
 
-    # -------- Main Program Loop -----------
+    """ -------- Main Program Loop ----------- """
     while not done:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -257,13 +260,13 @@ def main():
         # Update items in the level
         current_level.update()
 
-        # If the player gets near the right side, shift the world left (-x)
-        if player.rect.right > SCREEN_WIDTH:
-            player.rect.right = SCREEN_WIDTH
+        # If the player gets near the right side of the game window, shift the world left (-x)
+        #if player.rect.right > SCREEN_WIDTH:
+            #player.rect.right = SCREEN_WIDTH
 
-        # If the player gets near the left side, shift the world right (+x)
-        if player.rect.left < 0:
-            player.rect.left = 0
+        # If the player gets near the left side of the game window, shift the world right (+x)
+        #if player.rect.left < 0:
+            #player.rect.left = 0
 
         # ALL CODE TO DRAW SHOULD GO BELOW THIS COMMENT
         current_level.draw(screen)
