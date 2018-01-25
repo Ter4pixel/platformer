@@ -180,7 +180,7 @@ class Level_01(Level):
         Level.__init__(self, player)
 
         # Array with width and height as first and second values and third and fourth values are the x, and y coordinates of platform
-        level = terrain_generation()
+        level = return_terrain()
         
         #""" for loop for procedural terrain generation. """
         #for i in range(0, 10):
