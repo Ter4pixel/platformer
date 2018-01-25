@@ -1,6 +1,6 @@
 import pygame # very obvious why this is imported
 import pyglet # for procedural terrain generation
-import random # for random things like your mom
+import random # for random things
 
 # Global constants
 
