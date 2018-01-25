@@ -1,6 +1,7 @@
 import pygame # very obvious why this is imported
 import pyglet # for procedural terrain generation
 import random # for random things
+import platformer_terrain
 
 # Global constants
 
@@ -179,7 +180,7 @@ class Level_01(Level):
         Level.__init__(self, player)
 
         # Array with width and height as first and second values and third and fourth values are the x, and y coordinates of platform
-        level = [[210, 70, 25, 50 ]]
+        level = terrain_generation()
         
         #""" for loop for procedural terrain generation. """
         #for i in range(0, 10):
