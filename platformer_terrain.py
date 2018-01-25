@@ -10,11 +10,18 @@ import random
 def return_terrain():
 terrain_array = []
 """ for loop for procedural terrain generation. """
-for i in range(0, 10):
-  # Put random platforms in game
-  # level.append([random.randrange(100, 200), random.randrange(100, 200), random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
-  # first two values is the width and height.
-  terrain_array.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
+for thing in range(0, 10):
+  # Put random platforms in game - first two values is the width and height.
+  elementtoconsider = [200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)]
+  
+  addtoarray = true
+  # makes sure the terrain doesn't collide with other terrain.
+  for lengthindex in range(0, terrain_array.length):
+    item = terrain_array[lengthindex]
+    if (item[2] < elementtoconsider[2] && item[2] + item[0] > elementtoconsider[2] + elementtoconsider[0] && item[3] < elementtoconsider[3] && item[3] + item[1] > elementtoconsider[3] + elementtoconsider[1]):
+      addtoarray = false
+  if (addtoarray):
+    terrain_array.append(elementtoconsider)
   
   return terrain_array
 
