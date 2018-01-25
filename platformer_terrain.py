@@ -1,10 +1,15 @@
+"""
+procedural terrain generation for platformer by Terapixel
+addition credits: TheGreatRambler
+"""
+
 import pygame
 import pygelt
 import random
 
 def return_terrain():
-""" for loop for procedural terrain generation. """
 terrain_array = []
+""" for loop for procedural terrain generation. """
 for i in range(0, 10):
   # Put random platforms in game
   # level.append([random.randrange(100, 200), random.randrange(100, 200), random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
