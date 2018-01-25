@@ -181,15 +181,15 @@ class Level_01(Level):
         # Array with width and height as first and second values and third and fourth values are the x, and y coordinates of platform
         level = [[210, 70, 25, 50 ]]
         
-        """ for loop for procedural terrain generation. """
-        for i in range(0, 10):
+        #""" for loop for procedural terrain generation. """
+        #for i in range(0, 10):
             # Put random platforms in game
             # level.append([random.randrange(100, 200), random.randrange(100, 200), random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
             # first two values is the width and height.
-            level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
-            level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
-            level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
-            level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
+            #level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
+            #level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
+            #level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
+            #level.append([200, 5, random.randrange(0, SCREEN_WIDTH), random.randrange(0, SCREEN_HEIGHT)])
             
         # Go through the array above and add platforms
         for platform in level:
