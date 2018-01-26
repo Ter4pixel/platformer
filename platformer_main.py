@@ -1,5 +1,6 @@
 import pygame  # very obvious why this is imported
 import platformer_terrain
+import color_constants
 import pyglet  # for procedural terrain generation
 import random  # for random things
 
