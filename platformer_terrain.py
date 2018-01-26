@@ -8,7 +8,6 @@ import pyglet
 import random
 import platformer_main
 
-
 def return_terrain():
     # make an empty array:
     terrain_array = []
